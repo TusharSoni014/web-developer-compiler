@@ -1,3 +1,5 @@
+goto https://platform.openai.com/account/api-keys for API KEY.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
