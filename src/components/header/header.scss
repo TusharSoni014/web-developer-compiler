@@ -1,0 +1,22 @@
+.header-container {
+  position: relative;
+  z-index: 11111;
+  height: 50px;
+  width: 100%;
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+  a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}

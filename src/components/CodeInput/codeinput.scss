@@ -1,0 +1,33 @@
+.code-input-container {
+  width: 50%;
+  height: calc(100vh - 50px);
+  .tabs-bar {
+    .tab-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        margin: 0 5px 0 0;
+      }
+    }
+    .ai-helper-btn{
+        border-radius: 2px;
+        border: none;
+        margin: 0 8px;
+        box-shadow: none !important;
+    }
+    .code-editor-screen {
+      height: calc(100vh - 100px);
+      overflow: auto;
+    }
+  }
+  .ant-tabs-nav {
+    margin: 0 !important;
+    height: 50px;
+    .ant-tabs-tab {
+      margin: 0;
+      padding: 0px 10px;
+      color: white;
+    }
+  }
+}
