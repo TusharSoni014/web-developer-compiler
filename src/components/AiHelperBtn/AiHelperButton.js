@@ -16,7 +16,7 @@ import {
   updateAiHelperResult,
   updateLoading,
   updateSelectedCode,
-} from "../../redux/slices/CodeInputSlice";
+} from "../../redux/slices/WebDevCodeInputSlice";
 import { draculaInit } from "@uiw/codemirror-theme-dracula";
 import { updateTokens } from "../../redux/slices/AiHelperSlice";
 
@@ -33,16 +33,16 @@ export default function AiHelperButton() {
   };
   const dispatch = useDispatch();
 
-  const isLoading = useSelector((state) => state.CodeInputSlice.isLoading);
+  const isLoading = useSelector((state) => state.WebDevCodeInputSlice.isLoading);
 
   const selectedCode = useSelector(
-    (state) => state.CodeInputSlice.selectedCodePiece
+    (state) => state.WebDevCodeInputSlice.selectedCodePiece
   );
 
-  const wholeCode = useSelector((state) => state.CodeInputSlice.wholeCode);
+  const wholeCode = useSelector((state) => state.WebDevCodeInputSlice.wholeCode);
 
   const aiHelperResult = useSelector(
-    (state) => state.CodeInputSlice.aiHelperResult
+    (state) => state.WebDevCodeInputSlice.aiHelperResult
   );
 
   const tokens = useSelector((state) => state.AiHelperSlice.tokens);
@@ -53,7 +53,7 @@ export default function AiHelperButton() {
   async function callGPT3API(code) {
     const headers = {
       "Content-Type": "application/json",
-      Authorization: `Bearer YOUR-OPENAI-API-KEY`,
+      Authorization: `Bearer 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`,
     };
     const prompt = `explain me this segment of code in detail, ${code}`;
     const data = {
@@ -72,7 +72,7 @@ export default function AiHelperButton() {
     } catch (error) {
       console.error("Error calling GPT-3.5 API:", error);
       toast.error("Some Error Occured !");
-      dispatch(updateLoading(false))
+      dispatch(updateLoading(false));
     }
   }
 

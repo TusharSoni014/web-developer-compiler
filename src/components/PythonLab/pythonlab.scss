@@ -1,0 +1,53 @@
+.python-lab-main-container {
+  height: calc(100vh - 50px);
+  overflow: hidden;
+  .python-code-input-inner-container {
+    .python-code-input-header {
+      height: 50px;
+      background-color: black;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 10px;
+      gap: 10px;
+      .play-icon-btn,
+      .download-file-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        background-color: #00cb44;
+        border: none;
+        color: white;
+        border-radius: 3px;
+        .play-icon {
+          font-size: 20px;
+        }
+        &:hover {
+          background-color: darken($color: #00cb44, $amount: 10);
+        }
+      }
+      .download-file-button {
+        background-color: dodgerblue;
+        &:hover {
+          background-color: darken($color: dodgerblue, $amount: 10);
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-state-btn-icon {
+  animation: rotate360 2s linear infinite; /* Adjust the animation duration as needed */
+}

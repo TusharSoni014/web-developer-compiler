@@ -1,0 +1,82 @@
+.code-preview-container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: none;
+}
+
+.card {
+  width: 100%;
+  height: calc(100vh - 50px);
+  background: lightgrey !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .virtual-browser-header {
+    width: 100%;
+    display: flex;
+    box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.6);
+    position: relative;
+    .circles,
+    .browser {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      &.circles {
+        width: 20%;
+        gap: 8px;
+        padding: 10px;
+        .c {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          box-shadow: inset 2px 2px 5px rgba(235, 235, 235, 0.356);
+
+          &:first-child {
+            background-color: red;
+          }
+
+          &:nth-child(2) {
+            background-color: rgb(204, 167, 4);
+          }
+
+          &:last-child {
+            background-color: green;
+          }
+        }
+      }
+      &.browser {
+        width: 80%;
+        padding: 5px;
+        display: flex;
+        gap: 10px;
+        .chevrons {
+          display: flex;
+        }
+        .search-bar {
+          position: relative;
+          border: 0.5px solid black;
+          border-radius: 5px;
+          padding: 5px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          color: rgb(88, 88, 88);
+          box-shadow: inset 2px 2px 2px #05050525;
+          svg {
+            position: absolute;
+            left: 10px;
+          }
+        }
+      }
+    }
+  }
+  .virtual-browser-body{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+  }
+}

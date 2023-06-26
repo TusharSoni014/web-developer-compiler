@@ -4,24 +4,4 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-width: 768px;
-  .split {
-    width: 100%;
-    max-height: calc(100vh - 50px);
-  }
-  .split {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .gutter {
-    background-color: #1b1b1b;
-    background-repeat: no-repeat;
-    background-position: 50%;
-  }
-
-  .gutter.gutter-horizontal {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
-    cursor: col-resize;
-  }
 }

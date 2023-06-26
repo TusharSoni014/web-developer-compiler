@@ -1,0 +1,8 @@
+.web-dev-lab-container {
+  background-color: #282a36;
+  width: 100%;
+  max-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  min-width: 768px;
+}
