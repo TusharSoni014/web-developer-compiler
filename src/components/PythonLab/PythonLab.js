@@ -13,6 +13,7 @@ import {
 } from "../../redux/slices/PythonCompilerSlice";
 import { BiLoader } from "react-icons/bi";
 import { FaDownload } from "react-icons/fa";
+import { useEffect } from "react";
 
 export default function PythonLab() {
   const dispatch = useDispatch();
@@ -32,13 +33,15 @@ export default function PythonLab() {
       parameters: [],
     };
     dispatch(fetchCompileCode(codeObject));
-    console.log("-----------------------------------------", pythonCodeOutput?.trace?.[pythonCodeOutput.trace.length - 1].event)
+  }
+
+  useEffect(() => {
     dispatch(
       updateEventType(
         pythonCodeOutput?.trace?.[pythonCodeOutput.trace.length - 1].event
       )
     );
-  }
+  }, [pythonCodeOutput]);
 
   function handleFileDownload() {
     const fileContent = pythonCodeValue;

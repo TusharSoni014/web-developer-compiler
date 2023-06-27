@@ -17,14 +17,13 @@ export default function PythonCodePreview() {
 
   const eventType = useSelector((state) => state.pythonCompilerSlice.eventType);
 
-  console.log(eventType);
-
   useEffect(() => {
     setErrorMsg(null);
-    if (exceptionError?.event.includes("exception")) {
+    if (eventType?.includes("exception")) {
       setErrorMsg(exceptionError?.exception_msg);
-    } else if (exceptionError?.event == "raw_input") {
+    } else if (eventType == "raw_input") {
       const input = prompt();
+      console.log("input", input);
     } else {
       setErrorMsg(null);
     }

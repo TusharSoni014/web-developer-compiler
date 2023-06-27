@@ -2,7 +2,7 @@ import React from "react";
 import "./home.scss";
 import LabCard from "./LabCard/LabCard";
 import { SiPython, SiCplusplus } from "react-icons/si";
-import { BsCCircle, BsCodeSlash } from "react-icons/bs";
+import { BsCCircle, BsCodeSlash, BsFillPatchQuestionFill } from "react-icons/bs";
 import { FaJava } from "react-icons/fa";
 
 const labs = [
@@ -42,6 +42,13 @@ const labs = [
     backgroundColor: "linear-gradient(to right bottom, #F89917, #F89917)",
     color: "black",
     url: "java-lab",
+  },
+  {
+    logo: <BsFillPatchQuestionFill />,
+    name: "More Coming Soon",
+    backgroundColor: "#cbcbcb",
+    color: "black",
+    url: "",
   },
 ];
 
