@@ -13,21 +13,16 @@ export default function PythonCodePreview() {
 
   const stdout =
     pythonCodeOutput?.trace?.[pythonCodeOutput?.trace?.length - 1].stdout;
-
   const exceptionError =
     pythonCodeOutput?.trace?.[pythonCodeOutput?.trace?.length - 1];
 
   const eventType = useSelector((state) => state.pythonCompilerSlice.eventType);
-
   console.log(eventType);
 
   useEffect(() => {
     setErrorMsg(null);
     if (eventType?.includes("exception")) {
       setErrorMsg(exceptionError?.exception_msg);
-    } else if (eventType === "raw_input") {
-      // setIsModalOpen(true);
-      console.log("INPUT DALO BHAIII !");
     } else {
       setErrorMsg(null);
     }
