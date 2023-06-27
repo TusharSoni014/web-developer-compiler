@@ -22,9 +22,6 @@ import { updateTokens } from "../../redux/slices/AiHelperSlice";
 
 export default function AiHelperButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
   const handleOk = () => {
     setIsModalOpen(false);
   };

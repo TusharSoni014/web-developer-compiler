@@ -1,23 +1,26 @@
 .lab-card-item-container {
-    max-height: 300px;
-    min-height: 300px;
-    padding: 10px;
-    cursor: pointer;
-    transition-duration: 0.2s;
-    border-radius: 10px;
-    &:hover{
-        box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.2);
-    }
-    .logo-container{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 8rem;
-        height: 80%;
-    }
-    .lab-name{
-        font-size: 20px;
-        text-align: center;
-    }
+  max-height: 300px;
+  min-height: 300px;
+  padding: 10px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border-radius: 10px;
+  filter: none;
+  transform: none;
+  .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    height: 80%;
+  }
+  .lab-name {
+    font-size: 20px;
+    text-align: center;
+  }
+  &:hover {
+    scale: 1.05;
+    box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.2);
+  }
 }

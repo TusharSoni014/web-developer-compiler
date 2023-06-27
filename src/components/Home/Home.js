@@ -4,6 +4,7 @@ import LabCard from "./LabCard/LabCard";
 import { SiPython, SiCplusplus } from "react-icons/si";
 import { BsCCircle, BsCodeSlash } from "react-icons/bs";
 import { FaJava } from "react-icons/fa";
+import { FcQuestions } from "react-icons/fc";
 
 const labs = [
   {
@@ -42,6 +43,13 @@ const labs = [
     backgroundColor: "linear-gradient(to right bottom, #F89917, #F89917)",
     color: "black",
     url: "java-lab",
+  },
+  {
+    logo: <FcQuestions />,
+    name: "More Coming Soon",
+    backgroundColor: "#cdcdcd",
+    color: "black",
+    url: "",
   },
 ];
 

@@ -7,7 +7,10 @@ export default function LabCard({ data }) {
   return (
     <div
       onClick={() => navigate(data.url)}
-      style={{ background: data.backgroundColor, color: data.color }}
+      style={{
+        background: data.backgroundColor,
+        color: data.color,
+      }}
       className="lab-card-item-container"
     >
       <div className="logo-container">{data.logo}</div>

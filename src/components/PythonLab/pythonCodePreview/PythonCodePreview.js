@@ -8,7 +8,9 @@ export default function PythonCodePreview() {
   const pythonCodeOutput = useSelector(
     (state) => state.pythonCompilerSlice.pythonCodeOutput
   );
-  console.log(pythonCodeOutput);
+
+  console.log("pythonCodeOutput", pythonCodeOutput);
+
   const stdout =
     pythonCodeOutput?.trace?.[pythonCodeOutput?.trace?.length - 1].stdout;
 
@@ -21,48 +23,47 @@ export default function PythonCodePreview() {
 
   useEffect(() => {
     setErrorMsg(null);
-    if (exceptionError?.event.includes("exception")) {
+    if (eventType?.includes("exception")) {
       setErrorMsg(exceptionError?.exception_msg);
-    } else if (exceptionError?.event == "raw_input") {
-      const input = prompt();
+    } else if (eventType === "raw_input") {
+      // setIsModalOpen(true);
+      console.log("INPUT DALO BHAIII !");
     } else {
       setErrorMsg(null);
     }
-  }, [exceptionError]);
-
-  useEffect(() => {
-    console.log(exceptionError?.event.includes("exception"));
-  }, [exceptionError]);
+  }, [pythonCodeOutput, eventType]);
 
   return (
-    <div className="python-code-preview-container">
-      <div className="container">
-        <div className="terminal_toolbar">
-          <div className="butt">
-            <button className="btn btn-color"></button>
-            <button className="btn"></button>
-            <button className="btn"></button>
+    <>
+      <div className="python-code-preview-container">
+        <div className="container">
+          <div className="terminal_toolbar">
+            <div className="butt">
+              <button className="btn btn-color"></button>
+              <button className="btn"></button>
+              <button className="btn"></button>
+            </div>
+            <p className="user">Python v3 Console</p>
           </div>
-          <p className="user">Python v3 Console</p>
-        </div>
-        <div className="terminal_body">
-          <div
-            style={
-              stdout !== undefined || errorMsg
-                ? { display: "block" }
-                : { display: "flex" }
-            }
-            className="terminal_promt"
-          >
-            <span className="terminal_location">{">>>"}</span>
-            <pre className="python-code-output">
-              {stdout !== undefined ? stdout : ""}
-            </pre>
-            {errorMsg && <div className="error-msg">{errorMsg}</div>}
-            <span className="terminal_cursor"></span>
+          <div className="terminal_body">
+            <div
+              style={
+                stdout !== undefined || errorMsg
+                  ? { display: "block" }
+                  : { display: "flex" }
+              }
+              className="terminal_promt"
+            >
+              <span className="terminal_location">{">>>"}</span>
+              <pre className="python-code-output">
+                {stdout !== undefined ? stdout : ""}
+              </pre>
+              {errorMsg && <div className="error-msg">{errorMsg}</div>}
+              <span className="terminal_cursor"></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
