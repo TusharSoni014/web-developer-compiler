@@ -30,13 +30,17 @@ export default function AiHelperButton() {
   };
   const dispatch = useDispatch();
 
-  const isLoading = useSelector((state) => state.WebDevCodeInputSlice.isLoading);
+  const isLoading = useSelector(
+    (state) => state.WebDevCodeInputSlice.isLoading
+  );
 
   const selectedCode = useSelector(
     (state) => state.WebDevCodeInputSlice.selectedCodePiece
   );
 
-  const wholeCode = useSelector((state) => state.WebDevCodeInputSlice.wholeCode);
+  const wholeCode = useSelector(
+    (state) => state.WebDevCodeInputSlice.wholeCode
+  );
 
   const aiHelperResult = useSelector(
     (state) => state.WebDevCodeInputSlice.aiHelperResult
@@ -50,7 +54,7 @@ export default function AiHelperButton() {
   async function callGPT3API(code) {
     const headers = {
       "Content-Type": "application/json",
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer ${process.env.REACT_APP_OPEN_AI_KEY}`,
     };
     const prompt = `explain me this segment of code in detail, ${code}`;
     const data = {

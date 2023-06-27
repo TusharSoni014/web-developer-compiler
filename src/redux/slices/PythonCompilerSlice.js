@@ -11,7 +11,7 @@ export const fetchCompileCode = createAsyncThunk(
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "81be9e554cmshf22a8aaae91ea26p15e8dajsnedbf64237ce9",
+            process.env.REACT_APP_CORS_API_KEY,
           "X-RapidAPI-Host": "cors-proxy4.p.rapidapi.com",
         },
       };
