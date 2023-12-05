@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Modal, Form, Input } from "antd";
 import { FaDownload } from "react-icons/fa";
 import {
-  fetchCompileCode,
+  fetchPythonCompileCode,
   updateLoading,
 } from "../../../redux/slices/PythonCompilerSlice";
 import { BiLoader } from "react-icons/bi";
@@ -35,7 +35,7 @@ export default function PythonLabHeader() {
       code: processedCode,
       parameters: [values["user-input"]],
     };
-    dispatch(fetchCompileCode(codeObject));
+    dispatch(fetchPythonCompileCode(codeObject));
     setIsModalOpen(false);
   };
   const onFinishFailed = (errorInfo) => {
@@ -57,7 +57,7 @@ export default function PythonLabHeader() {
       code: processedCode,
       parameters: [],
     };
-    dispatch(fetchCompileCode(codeObject));
+    dispatch(fetchPythonCompileCode(codeObject));
   }
   const processedCode = encodeURIComponent(encodeURIComponent(pythonCodeValue));
 

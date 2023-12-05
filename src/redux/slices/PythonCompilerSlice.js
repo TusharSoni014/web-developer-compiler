@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const fetchCompileCode = createAsyncThunk(
-  "fetch/CompileCode",
+export const fetchPythonCompileCode = createAsyncThunk(
+  "fetch/pythonCompileCode",
   async (body, thunkApi) => {
     try {
       const { code, parameters } = body;
@@ -55,7 +55,7 @@ const pythonCompilerSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchCompileCode.fulfilled, (state, action) => {
+    builder.addCase(fetchPythonCompileCode.fulfilled, (state, action) => {
       state.pythonCodeOutput = action.payload;
     });
   },

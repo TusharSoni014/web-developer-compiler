@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import AiHelperSlice from "./slices/AiHelperSlice";
 import WebDevCodeInputSlice from "./slices/WebDevCodeInputSlice";
 import pythonCompilerSlice from "./slices/PythonCompilerSlice";
+import javaCompilerSlice from "./slices/JavaCompilerSlice";
 
 const persistConfig = {
   key: "root",
@@ -17,6 +18,7 @@ const persistedReducer = persistReducer(
     WebDevCodeInputSlice,
     AiHelperSlice,
     pythonCompilerSlice,
+    javaCompilerSlice,
   })
 );
 

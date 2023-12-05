@@ -1,0 +1,39 @@
+.java-lab-header-container {
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+  .play-icon-btn,
+  .download-file-button,
+  .stdin-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: #00cb44;
+    border: none;
+    color: white !important;
+    border-radius: 3px;
+    .play-icon {
+      font-size: 20px;
+    }
+    &:hover {
+      background-color: darken($color: #00cb44, $amount: 10);
+    }
+  }
+  .download-file-button,
+  .stdin-button {
+    background-color: dodgerblue;
+    &:hover {
+      background-color: darken($color: dodgerblue, $amount: 10);
+    }
+  }
+  .stdin-button {
+    font-size: 18px;
+  }
+}

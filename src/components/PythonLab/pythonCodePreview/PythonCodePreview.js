@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function PythonCodePreview() {
   const [errorMsg, setErrorMsg] = useState(null);
-  const dispatch = useDispatch();
   const pythonCodeOutput = useSelector(
     (state) => state.pythonCompilerSlice.pythonCodeOutput
   );
